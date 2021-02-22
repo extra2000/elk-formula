@@ -1,0 +1,38 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: logstash-pod
+spec:
+  restartPolicy: OnFailure
+  containers:
+  - name: ls01
+    image: {{ logstash.image.name }}
+    securityContext:
+      runAsGroup: 1000
+      runAsUser: 1000
+    resources:
+      requests:
+        memory: {{ logstash.resources.requests.memory }}
+      limits:
+        memory: {{ logstash.resources.limits.memory }}
+    ports:
+    - containerPort: {{ logstash.port.webapi.container }}
+      hostPort: {{ logstash.port.webapi.host }}
+      hostIP: {{ logstash.port.webapi.ip }}
+      protocol: tcp
+    - containerPort: {{ logstash.port.beats.container }}
+      hostPort: {{ logstash.port.beats.host }}
+      hostIP: {{ logstash.port.beats.ip }}
+      protocol: tcp
+    volumeMounts:
+    - mountPath: /usr/share/logstash/config/logstash.yml
+      name: logstash-yml
+    - mountPath: /usr/share/logstash/config/logstash.conf
+      name: logstash-conf
+  volumes:
+  - name: logstash-yml
+    hostPath:
+      path: /opt/elk/logstash.yml
+  - name: logstash-conf
+    hostPath:
+      path: /opt/elk/logstash.conf

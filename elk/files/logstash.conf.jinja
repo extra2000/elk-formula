@@ -1,0 +1,17 @@
+# Sample Logstash configuration for creating a simple
+# Beats -> Logstash -> Elasticsearch pipeline.
+
+input {
+  beats {
+    port => {{ logstash.port.beats.container }}
+  }
+}
+
+output {
+  elasticsearch {
+    hosts => {{ logstash.confcfg.output.elasticsearch.hosts }}
+    index => "{{ logstash.confcfg.output.elasticsearch.index }}"
+    user => "{{ logstash.confcfg.output.elasticsearch.user }}"
+    password => "{{ logstash.confcfg.output.elasticsearch.password }}"
+  }
+}
