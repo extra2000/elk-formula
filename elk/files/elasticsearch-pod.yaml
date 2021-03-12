@@ -1,6 +1,8 @@
 apiVersion: v1
 kind: Pod
 metadata:
+  labels:
+    app: elasticsearch-pod
   name: elasticsearch-pod
 spec:
   restartPolicy: OnFailure
