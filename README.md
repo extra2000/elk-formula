@@ -12,6 +12,7 @@ SaltStack Formula for ELK (Elasticsearch, Logstash, Kibana) stack.
 | States | Descriptions |
 | ------ | ------------ |
 | `elk.config` | Configure ELK. |
+| `elk.config.nginx` | Configure NGINX for Kibana HTTPS. |
 | `elk.service.elasticsearch` | Deploy Elasticsearch pod. |
 | `elk.service.logstash` | Deploy Logstash pod. |
 | `elk.service.kibana` | Deploy Kibana pod. |
