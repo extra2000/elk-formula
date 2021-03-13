@@ -16,3 +16,6 @@ SaltStack Formula for ELK (Elasticsearch, Logstash, Kibana) stack.
 | `elk.service.elasticsearch` | Deploy Elasticsearch pod. |
 | `elk.service.logstash` | Deploy Logstash pod. |
 | `elk.service.kibana` | Deploy Kibana pod. |
+| `elk.service.elasticsearch.destroy` | Destroy Elasticsearch pod. |
+| `elk.service.logstash.destroy` | Destroy Logstash pod. |
+| `elk.service.kibana.destroy` | Destroy Kibana pod. |
