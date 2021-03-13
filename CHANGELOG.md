@@ -1,5 +1,12 @@
 # Changelog
 
+### [1.1.1](https://github.com/extra2000/elk-formula/compare/v1.1.0...v1.1.1) (2021-03-13)
+
+
+### Fixes
+
+* **elknet:** Make `bridge` customizable to prevent pod networking conflicts ([9868089](https://github.com/extra2000/elk-formula/commit/98680898677d65a4c6068795922f87feeed94363))
+
 ## [1.1.0](https://github.com/extra2000/elk-formula/compare/v1.0.0...v1.1.0) (2021-03-13)
 
 
