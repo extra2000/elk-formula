@@ -1,5 +1,16 @@
 # Changelog
 
+## [2.0.0](https://github.com/extra2000/elk-formula/compare/v1.1.1...v2.0.0) (2021-03-14)
+
+
+### ⚠ BREAKING CHANGES
+
+* **config/nginx.sls:** `elk-formula` now expects NGINX to be deployed via Podman for HTTPS
+
+### Fixes
+
+* **config/nginx.sls:** Fix for NGINX deployments via Podman ([84aff16](https://github.com/extra2000/elk-formula/commit/84aff16aeacc7f9455db0c329a68f36c547a4897))
+
 ### [1.1.1](https://github.com/extra2000/elk-formula/compare/v1.1.0...v1.1.1) (2021-03-13)
 
 
