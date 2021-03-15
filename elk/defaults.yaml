@@ -37,7 +37,7 @@ elk:
         memory: 1200Mi
   logstash:
     image:
-      name: docker.io/logstash:7.10.1
+      name: docker.io/elastic/logstash:7.11.2
     port:
       webapi:
         container: 9600
