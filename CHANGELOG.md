@@ -1,5 +1,14 @@
 # Changelog
 
+## [2.1.0](https://github.com/extra2000/elk-formula/compare/v2.0.0...v2.1.0) (2021-03-15)
+
+
+### Features
+
+* **elasticsearch:** Upgrade from version `7.10.1` to `7.11.2` ([ce8d82a](https://github.com/extra2000/elk-formula/commit/ce8d82a05d8a1dec782ab4e194e566dfcc647c6c))
+* **kibana:** Upgrade from version `7.10.1` to `7.11.2` ([fd8f093](https://github.com/extra2000/elk-formula/commit/fd8f09305ff732c05476f85a0bec7653ef963564))
+* **logstash:** Upgrade from version `7.10.1` to `7.11.2` ([51cffef](https://github.com/extra2000/elk-formula/commit/51cffef787d4481ceb58c651353edfdc23dd05c0))
+
 ## [2.0.0](https://github.com/extra2000/elk-formula/compare/v1.1.1...v2.0.0) (2021-03-14)
 
 
