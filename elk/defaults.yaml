@@ -71,7 +71,7 @@ elk:
         memory: 1200Mi
   kibana:
     image:
-      name: docker.io/kibana:7.10.1
+      name: docker.io/elastic/kibana:7.11.2
     port:
       server:
         container: 5601
