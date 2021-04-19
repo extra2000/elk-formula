@@ -13,7 +13,7 @@ elk:
       bridge: cni-podman0
   elasticsearch:
     image:
-      name: docker.io/elastic/elasticsearch:7.11.2
+      name: docker.elastic.co/elasticsearch/elasticsearch:7.12.1
     port:
       requests:
         container: 9200
