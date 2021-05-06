@@ -2,6 +2,7 @@
 # vim: ft=yaml
 
 elk:
+  projectname: elk
   hostuser:
     name: vagrant
     group: vagrant
@@ -24,7 +25,7 @@ elk:
         host: 9300
         ip: 0.0.0.0
     ymlcfg:
-      cluster.name: podman-cluster
+      cluster.name: elk-cluster
       network.host: 0.0.0.0
       discovery.type: single-node
       bootstrap.memory_lock: true
@@ -51,7 +52,7 @@ elk:
       output:
         elasticsearch:
           hosts:
-            - http://elasticsearch-pod:9200
+            - http://elk-elasticsearch-pod:9200
           index: '%{[@metadata][beat]}-%{[@metadata][version]}-%{+YYYY.MM.dd}'
           user: logstash_internal
           password: abcde12345
@@ -63,7 +64,7 @@ elk:
       http.host: 0.0.0.0
       xpack.monitoring.enabled: true
       xpack.monitoring.elasticsearch.hosts:
-        - "http://elasticsearch-pod:9200"
+        - "http://elk-elasticsearch-pod:9200"
     resources:
       requests:
         memory: 1200Mi
@@ -83,10 +84,10 @@ elk:
       limits:
         memory: 800Mi
     ymlcfg:
-      server.name: kibana-pod
+      server.name: elk-kibana-pod
       server.host: "0"
       elasticsearch.hosts:
-        - http://elasticsearch-pod:9200
+        - http://elk-elasticsearch-pod:9200
       elasticsearch.username: kibana_system
       elasticsearch.password: abcde12345
       monitoring.ui.container.elasticsearch.enabled: true

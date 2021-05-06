@@ -2,8 +2,8 @@ apiVersion: v1
 kind: Pod
 metadata:
   labels:
-    app: logstash-pod
-  name: logstash-pod
+    app: {{ projectname }}-logstash-pod
+  name: {{ projectname }}-logstash-pod
 spec:
   restartPolicy: OnFailure
   containers:

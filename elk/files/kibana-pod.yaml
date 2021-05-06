@@ -2,8 +2,8 @@ apiVersion: v1
 kind: Pod
 metadata:
   labels:
-    app: kibana-pod
-  name: kibana-pod
+    app: {{ projectname }}-kibana-pod
+  name: {{ projectname }}-kibana-pod
 spec:
   restartPolicy: OnFailure
   containers:

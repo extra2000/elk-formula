@@ -2,8 +2,8 @@ apiVersion: v1
 kind: Pod
 metadata:
   labels:
-    app: elasticsearch-pod
-  name: elasticsearch-pod
+    app: {{ projectname }}-elasticsearch-pod
+  name: {{ projectname }}-elasticsearch-pod
 spec:
   restartPolicy: OnFailure
   containers:
@@ -50,4 +50,4 @@ spec:
       path: /opt/elk/elasticsearch.yml
   - name: elasticsearch-data
     persistentVolumeClaim:
-      claimName: elasticsearch-data
+      claimName: {{ projectname }}-elasticsearch-data

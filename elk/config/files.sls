@@ -37,6 +37,7 @@
     - group: {{ ELK.hostuser.group }}
     - template: jinja
     - context:
+      projectname: {{ ELK.projectname }}
       elasticsearch: {{ ELK.elasticsearch }}
 
 /opt/elk/elasticsearch.yml:
@@ -55,6 +56,7 @@
     - group: {{ ELK.hostuser.group }}
     - template: jinja
     - context:
+      projectname: {{ ELK.projectname }}
       logstash: {{ ELK.logstash }}
 
 /opt/elk/logstash.yml:
@@ -82,6 +84,7 @@
     - group: {{ ELK.hostuser.group }}
     - template: jinja
     - context:
+      projectname: {{ ELK.projectname }}
       kibana: {{ ELK.kibana }}
 
 /opt/elk/kibana.yml:
