@@ -4,18 +4,24 @@
 {%- set tplroot = tpldir.split('/')[0] %}
 {%- from tplroot ~ "/map.jinja" import ELK with context %}
 
+{% if ELK.hostuser.name == 'root' %}
+  {% set cni_path = '/etc/cni/net.d/' %}
+{% else %}
+  {% set cni_path = '/home/' + ELK.hostuser.name + '/.config/cni/net.d' %}
+{% endif %}
+
 /opt/elk:
   file.directory:
     - user: {{ ELK.hostuser.name }}
     - group: {{ ELK.hostuser.group }}
 
-/home/{{ ELK.hostuser.name }}/.config/cni/net.d:
+{{ cni_path }}:
   file.directory:
     - user: {{ ELK.hostuser.name }}
     - group: {{ ELK.hostuser.group }}
     - makedirs: true
 
-/home/{{ ELK.hostuser.name }}/.config/cni/net.d/podman-network-elknet.conflist:
+{{ cni_path }}/podman-network-elknet.conflist:
   file.managed:
     - source: salt://elk/files/podman-network-elknet.conflist.jinja
     - user: {{ ELK.hostuser.name }}
