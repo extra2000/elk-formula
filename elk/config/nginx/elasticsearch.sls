@@ -4,9 +4,9 @@
 {%- set tplroot = tpldir.split('/')[0] %}
 {%- from tplroot ~ "/map.jinja" import ELK with context %}
 
-/opt/nginx/https.conf:
+/opt/nginx/conf.d/{{ ELK.projectname }}-elasticsearch.conf:
   file.managed:
-    - source: salt://elk/files/nginx-https.conf.jinja
+    - source: salt://elk/files/nginx/elasticsearch.conf
     - template: jinja
     - context:
-      kibana: {{ ELK.kibana }}
+      port: {{ ELK.elasticsearch.port }}
