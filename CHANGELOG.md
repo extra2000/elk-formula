@@ -1,5 +1,35 @@
 # Changelog
 
+## [3.0.0](https://github.com/extra2000/elk-formula/compare/v2.2.0...v3.0.0) (2021-05-14)
+
+
+### ⚠ BREAKING CHANGES
+
+* **nginx:** The NGINX HTTPS conf files has been refactored such that they are no longer compatible with previous NGINX Formula.
+* Naming scheme for pod and volume has changed.
+
+### Features
+
+* Add `projectname` prefix to pod and volume name to prevent conflicts with existing projects ([745a547](https://github.com/extra2000/elk-formula/commit/745a547fceac50995a99f17aa023867bf5b5f7bf))
+* **config.files:** Add support for rootful Podman ([aeb82bd](https://github.com/extra2000/elk-formula/commit/aeb82bd2731abb2704366a98185ed83046832708))
+
+
+### Fixes
+
+* **elk/defaults.yaml, pillar.example:** Use `cni-podman1` instead of `cni-podman0` to prevent conflict with rootful containers ([31a5510](https://github.com/extra2000/elk-formula/commit/31a5510420763767ab4dccfef3ed009eee632d54))
+* **logstash-pod:** Add missing `persistentVolumeClaim` ([c6d6892](https://github.com/extra2000/elk-formula/commit/c6d68928262c344abf959b059c0ad106f701ae71))
+* **nginx-https.conf.jinja:** Remove `default_server` to avoid conflicts with multiple conf files ([78934ce](https://github.com/extra2000/elk-formula/commit/78934cea7a1e6e205881bf6eeb2af34ccdf553a5))
+
+
+### Styles
+
+* **nginx-https.conf.jinja:** Move `server_name _;` to the top ([6f6c5a2](https://github.com/extra2000/elk-formula/commit/6f6c5a22009bac6beefba3f247b843e477bdd313))
+
+
+### Code Refactoring
+
+* **nginx:** Refactor NGINX HTTPS conf files to simplify deployments outside of Vagrant box ([636e598](https://github.com/extra2000/elk-formula/commit/636e59829cde997239279d21af477b4bff62ce60))
+
 ## [2.2.0](https://github.com/extra2000/elk-formula/compare/v2.1.0...v2.2.0) (2021-04-29)
 
 
