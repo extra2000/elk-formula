@@ -45,7 +45,7 @@ spec:
   volumes:
   - name: logstash-data
     persistentVolumeClaim:
-      claimName: {{ projectname }}-filebeat-data
+      claimName: {{ projectname }}-logstash-data
   - name: logstash-yml
     hostPath:
       path: /opt/elk/logstash.yml
