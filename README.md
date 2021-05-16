@@ -7,6 +7,15 @@
 SaltStack Formula for ELK (Elasticsearch, Logstash, Kibana) stack.
 
 
+## Prerequisites
+
+Create pipeline files based on the examples:
+```
+$ cp -v elk/files/pipelines/logstash.conf.example elk/files/pipelines/logstash.conf
+$ cp -v elk/files/pipelines.yml.example elk/files/pipelines.yml
+```
+
+
 ## Available states
 
 | States | Descriptions |
