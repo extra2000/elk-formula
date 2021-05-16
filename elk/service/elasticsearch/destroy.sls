@@ -6,5 +6,5 @@
 
 elasticsearch-pod-destroy:
   cmd.run:
-    - name: podman pod rm --force elasticsearch-pod
+    - name: podman pod rm --force {{ ELK.projectname }}-elasticsearch-pod
     - runas: {{ ELK.hostuser.name }}

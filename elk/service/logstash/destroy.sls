@@ -6,5 +6,5 @@
 
 logstash-pod-destroy:
   cmd.run:
-    - name: podman pod rm --force logstash-pod
+    - name: podman pod rm --force {{ ELK.projectname }}-logstash-pod
     - runas: {{ ELK.hostuser.name }}

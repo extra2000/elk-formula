@@ -6,5 +6,5 @@
 
 kibana-pod-destroy:
   cmd.run:
-    - name: podman pod rm --force kibana-pod
+    - name: podman pod rm --force {{ ELK.projectname }}-kibana-pod
     - runas: {{ ELK.hostuser.name }}
