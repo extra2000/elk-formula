@@ -42,6 +42,12 @@ spec:
       name: logstash-yml
     - mountPath: /usr/share/logstash/config/logstash.conf
       name: logstash-conf
+    - mountPath: /usr/share/logstash/pipeline
+      name: logstash-pipelines
+      readOnly: true
+    - mountPath: /usr/share/logstash/config/pipelines.yml
+      name: logstash-pipelines-conf
+      readOnly: true
   volumes:
   - name: logstash-data
     persistentVolumeClaim:
@@ -52,3 +58,9 @@ spec:
   - name: logstash-conf
     hostPath:
       path: /opt/elk/logstash.conf
+  - name: logstash-pipelines
+    hostPath:
+      path: /opt/elk/pipelines
+  - name: logstash-pipelines-conf
+    hostPath:
+      path: /opt/elk/pipelines.yml

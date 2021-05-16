@@ -1,0 +1,3 @@
+elk/files/pipelines.yml
+elk/files/pipelines/*
+!elk/files/pipelines/*.example

@@ -30,6 +30,21 @@
     - context:
       pod: {{ ELK.pod }}
 
+/opt/elk/pipelines:
+  file.recurse:
+    - source: salt://elk/files/pipelines
+    - user: {{ ELK.hostuser.name }}
+    - group: {{ ELK.hostuser.group }}
+    - show_changes: false
+    - file_mode: keep
+
+/opt/elk/pipelines.yml:
+  file.managed:
+    - source: salt://elk/files/pipelines.yml
+    - user: {{ ELK.hostuser.name }}
+    - group: {{ ELK.hostuser.group }}
+    - template: jinja
+
 /opt/elk/elasticsearch-pod.yaml:
   file.managed:
     - source: salt://elk/files/elasticsearch-pod.yaml
