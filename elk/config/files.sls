@@ -83,15 +83,6 @@
     - context:
       logstash: {{ ELK.logstash }}
 
-/opt/elk/logstash.conf:
-  file.managed:
-    - source: salt://elk/files/logstash.conf.jinja
-    - user: {{ ELK.hostuser.name }}
-    - group: {{ ELK.hostuser.group }}
-    - template: jinja
-    - context:
-      logstash: {{ ELK.logstash }}
-
 /opt/elk/kibana-pod.yaml:
   file.managed:
     - source: salt://elk/files/kibana-pod.yaml

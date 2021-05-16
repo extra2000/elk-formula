@@ -41,9 +41,6 @@ spec:
     - mountPath: /usr/share/logstash/config/logstash.yml
       name: logstash-yml
       readOnly: true
-    - mountPath: /usr/share/logstash/config/logstash.conf
-      name: logstash-conf
-      readOnly: true
     - mountPath: /usr/share/logstash/pipeline
       name: logstash-pipelines
       readOnly: true
@@ -57,9 +54,6 @@ spec:
   - name: logstash-yml
     hostPath:
       path: /opt/elk/logstash.yml
-  - name: logstash-conf
-    hostPath:
-      path: /opt/elk/logstash.conf
   - name: logstash-pipelines
     hostPath:
       path: /opt/elk/pipelines
