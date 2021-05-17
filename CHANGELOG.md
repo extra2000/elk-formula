@@ -1,5 +1,33 @@
 # Changelog
 
+## [4.0.0](https://github.com/extra2000/elk-formula/compare/v3.0.0...v4.0.0) (2021-05-17)
+
+
+### ⚠ BREAKING CHANGES
+
+* **logstash:** `elk/files/logstash.conf.jinja` has been removed in favor of pipeline
+
+### Features
+
+* **pipelines:** allow users to define their own pipelines ([0153118](https://github.com/extra2000/elk-formula/commit/01531182f333dda168380f47a481fe0bea3a499f))
+
+
+### Documentations
+
+* **README:** add instructions to define pipelines ([6fcdd4b](https://github.com/extra2000/elk-formula/commit/6fcdd4b4ea25dc2ec8f11d1c6aa02657cb913f4d))
+
+
+### Fixes
+
+* **elk.service:** forgot to prefix pods with `{{ ELK.projectname }}-` ([e3353f9](https://github.com/extra2000/elk-formula/commit/e3353f94383a60931797c3b769c129f502e3f0e4))
+* **logstash-pod:** fix volume typo ([ab61f4d](https://github.com/extra2000/elk-formula/commit/ab61f4ddb95eee4e6673fc54b792e61b26c57873))
+* **logstash-pod:** protect config files with read-only mount ([3074fa9](https://github.com/extra2000/elk-formula/commit/3074fa96b012ca00529c8f16b8990a358af8e9e0))
+
+
+### Code Refactoring
+
+* **logstash:** remove existing `logstash.conf` since we are using pipeline ([fc39316](https://github.com/extra2000/elk-formula/commit/fc39316733a16adb9d91ca57660c27ecb9b79511))
+
 ## [3.0.0](https://github.com/extra2000/elk-formula/compare/v2.2.0...v3.0.0) (2021-05-14)
 
 
